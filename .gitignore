@@ -10,5 +10,3 @@
 .idea/
 .elasticbeanstalk/
 vendor/
-Gemfile
-Gemfile.lock
