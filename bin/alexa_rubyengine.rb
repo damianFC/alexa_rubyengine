@@ -2,6 +2,7 @@
 # This Engine receives and responds to Amazon Echo's (Alexa) JSON requests.
 require 'sinatra'
 require 'json'
+require 'bundler/setup'
 require 'alexa_rubykit'
 
 # We must return application/json as our content type.
@@ -13,7 +14,7 @@ end
 post '/' do
   # Check that it's a valid Alexa request
   request_json = JSON.parse(request.body.read.to_s)
-  halt 500 if request_json['session'].nil? || request_json['version'].nil? || request_json['request'].nil?
+  halt 500 if AlexaRubykit.valid_alexa?(request_json)
   #
   # Creates a new Request object with the request parameter.
   request = AlexaRubykit::Request.new(request_json['request'])
