@@ -2,6 +2,7 @@
 # This Engine receives and responds to Amazon Echo's (Alexa) JSON requests.
 require 'sinatra'
 require 'json'
+require 'bundler/setup'
 require 'alexa_rubykit'
 
 # We must return application/json as our content type.
