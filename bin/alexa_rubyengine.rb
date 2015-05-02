@@ -13,6 +13,7 @@ end
 post '/' do
   # Check that it's a valid Alexa request
   request_json = JSON.parse(request.body.read.to_s)
+  p AlexaRubykit.print_version
   halt 500 if request_json['session'].nil? || request_json['version'].nil? || request_json['request'].nil?
   #
   # Creates a new Request object with the request parameter.
