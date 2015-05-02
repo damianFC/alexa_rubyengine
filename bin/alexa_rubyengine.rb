@@ -14,10 +14,8 @@ end
 post '/' do
   # Check that it's a valid Alexa request
   request_json = JSON.parse(request.body.read.to_s)
-  halt 500 if AlexaRubykit.valid_alexa?(request_json)
-  #
   # Creates a new Request object with the request parameter.
-  request = AlexaRubykit::Request.new(request_json['request'])
+  request = AlexaRubykit::Request.new(request_json)
   # Sets the version of our App's response to 1.0.
   request.version = '1.0'
   # Adds a session object to the response.
