@@ -16,14 +16,9 @@ post '/' do
   request_json = JSON.parse(request.body.read.to_s)
   # Creates a new Request object with the request parameter.
   request = AlexaRubykit::Request.new(request_json)
-  # Sets the version of our App's response to 1.0.
-  request.version = '1.0'
-  # Adds a session object to the response.
-  request.add_session(request_json['session']['sessionId'])
-  # Tells Alexa this ends the app session.
-  request.shouldEndSession = true
-  # Creates a speechouput json object with the text.
-  request.say_response('Hello, Ruby is running ready')
-  # Validates and generates the response from the previous methods into a valid JSON Object.
-  request.build_response
+
+  # Response
+  response = AlexaRubykit::Response.new
+  response.add_speech('Testing Alexa Rubykit!')
+  response.build_response
 end
