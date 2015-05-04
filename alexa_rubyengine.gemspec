@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'alexa_rubyengine/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "alexa_rubyengine"
-  spec.version       = AlexaRubyengine::VERSION
+  # We'll sync Engine Version with the kit.
+  spec.version       = '0.0.9'
   spec.authors       = ["Damian Finol"]
   spec.email         = ["damian.finol@gmail.com"]
 
