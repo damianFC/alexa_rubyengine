@@ -20,5 +20,6 @@ post '/' do
   # Response
   response = AlexaRubykit::Response.new
   response.add_speech('Ruby is running ready!')
+  response.add_hash_card( { :title => 'Ruby Run', :subtitle => 'Ruby Running Ready!' } )
   response.build_response
 end
