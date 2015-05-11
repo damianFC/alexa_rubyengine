@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |spec|
   spec.name          = "alexa_rubyengine"
   # We'll sync Engine Version with the kit.
-  spec.version       = '0.0.12'
+  spec.version       = '1.0.0'
   spec.authors       = ["Damian Finol"]
   spec.email         = ["damian.finol@gmail.com"]
 

@@ -17,7 +17,15 @@ post '/' do
   # Creates a new Request object with the request parameter.
   request = AlexaRubykit.build_request(request_json)
 
-  # We also need a response object.
+  # We can capture Session details inside of request.
+  # See session object for more information.
+  session = request.session
+  p session.new?
+  p session.has_attributes?
+  p session.session_id
+  p session.user_defined?
+
+  # We need a response object to respond to the Alexa.
   response = AlexaRubykit::Response.new
 
   # We can manipulate the request object.
