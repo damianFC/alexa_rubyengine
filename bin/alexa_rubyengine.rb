@@ -42,6 +42,13 @@ post '/' do
     response.add_hash_card( { :title => 'Ruby Intent', :subtitle => "Intent #{request.name}" } )
   end
 
+  if (request.type =='SESSION_ENDED_REQUEST')
+    # Wrap up whatever we need to do.
+    p "#{request.type}"
+    p "#{request.reason}"
+    halt 200
+  end
+
   # Return response
   response.build_response
 end
